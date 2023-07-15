@@ -1,0 +1,16 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+  <p>Дата: {{record.date}}</p>
+  <p>Обяд: {{record.lunch}}</p>
+  <p>Вечеря: {{record.dinner}}</p>
+
+  <a href='/food/{{record.id}}/edit'>
+    <button>Редакция</button>
+  </a>
+  <br>
+  <br>
+  <a href='/food'>
+    <button>Обратно</button>
+  </a>
+{% endblock content %}

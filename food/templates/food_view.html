@@ -1,0 +1,52 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+  <style>
+    th {
+      padding: 1vw 4vw
+    }
+
+    .food {
+      color: white;
+      background-color: grey;
+    }
+
+    .record a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .record .food a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .record:hover {
+      font-weight: 800;
+      cursor: pointer;
+    }
+  </style>
+
+  <h1>Меню - обяд и вечеря</h1>
+
+  <table border='1'>
+    <tr>
+      <th>Дата</th>
+      <th>Обяд</th>
+      <th>Вечеря</th>
+    </tr>
+    {% for record in records %}
+      <tr class='record'>
+        <td>
+          <a href='/food/{{record.id}}'>{{record.date}}</a>
+        </td>
+        <td class='food'>
+          <a href='/food/{{record.id}}'>{{record.lunch}}</a>
+        </td>
+        <td class='food'>
+          <a href='/food/{{record.id}}'>{{record.dinner}}</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock content %}
