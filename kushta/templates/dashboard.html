@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Dashboard</title>
+  <style>
+    body {
+      display: flex; height: 100vh; margin: 0
+    }
+
+    nav {
+      border-right: .2vw black solid;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    main, nav {
+      padding: 1vw;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href=''>Носене на вода</a>
+    <a href=''>Поръчки от Алито</a>
+    <a href=''>Обяд и вечеря</a>
+    <a href=''>Зов за помощ</a>
+    <a href=''>Семеен бюджет</a>
+  </nav>
+  <main>
+    {% block content %}
+    
+    {% endblock %}
+  </main>
+</body>
+</html>
