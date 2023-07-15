@@ -1,0 +1,22 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+  <p>Дата: {{record.date}}</p>
+  <p>Изпълнител: {{record.gatherer}}</p>
+  <p>
+    Изпълнено:
+    {% if record.completion %}
+    Да
+    {% else %}
+    Не
+    {% endif %}
+  </p>
+  <a href='/water/{{record.id}}/edit'>
+    <button>Редакция</button>
+  </a>
+  <br>
+  <br>
+  <a href='/water'>
+    <button>Обратно</button>
+  </a>
+{% endblock content %}

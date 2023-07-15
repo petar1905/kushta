@@ -1,0 +1,52 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+<h1>Информационно табло 'Носене на вода'</h1>
+<p>Кой ще ходи за вода през следващите 7 дни?</p>
+<table border='1'>
+  <tr>
+    {% for record in records %}
+      <td
+      {% if record.gatherer == 'Никой' %} class='empty'
+      {% endif %}
+
+      {% if record.completion == True %} class='green'
+      {% else %} class='red'
+      {% endif %}
+      
+      >
+        <a href='/water/{{record.id}}' class='record'>
+          {{record.date}} 
+          <br> {{record.gatherer}}
+        </a>
+      </td>
+    {% endfor %}
+  </tr>
+</table>
+
+<style>
+  td {
+    padding: 1vw;
+    text-align: center;
+    border: none
+  }
+
+  td:hover {
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  .record {
+    text-decoration: none;
+  }
+
+  .empty {background-color: white;}
+  .empty a {color: black;}
+
+  .red {background-color: red;}
+  .red a {color: white;}
+
+  .green {background-color: green;}
+  .green a {color: white;}
+</style>
+{% endblock  %}

@@ -1,0 +1,20 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+  <p>Дата: {{record.date}}</p>
+  
+  <form method='post'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type='submit' id='sub'
+    value='Редактиране'>
+  </form>
+  <br>
+  <a href='/water/{{record.id}}'>
+    <button>Обратно</button>
+  </a>
+
+  <style>
+    #sub:hover {cursor: pointer}
+  </style>
+{% endblock content %}
